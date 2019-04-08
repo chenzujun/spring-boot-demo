@@ -1,6 +1,3 @@
-/*
- * Copyright (c) 2005-2018. 4PX and/or its affiliates. All rights reserved. Use,Copy is subject to authorized license.
- */
 package com.raine.demo.domain;
 
 import lombok.Data;
@@ -10,7 +7,7 @@ import java.util.Date;
 /**
  * @author chenjun
  * @date 2019/3/26
- * @since V1.53
+ * @since V1.0
  */
 @Data
 public class User {

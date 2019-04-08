@@ -1,11 +1,7 @@
-/*
- * Copyright (c)
- */
 package com.raine.demo.mapper;
 
 
 import com.raine.demo.domain.User;
-import org.apache.ibatis.annotations.Mapper;
 
 /**
  * User Mapper

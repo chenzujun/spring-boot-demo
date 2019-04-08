@@ -8,7 +8,7 @@ import com.raine.demo.domain.User;
 /**
  * @author chenjun
  * @date 2019/3/26
- * @since V1.53
+ * @since V1.0
  */
 public interface IUserService {
 

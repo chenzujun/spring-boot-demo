@@ -1,13 +1,12 @@
-/*
- * Copyright (c) 2005-2018. 4PX and/or its affiliates. All rights reserved. Use,Copy is subject to authorized license.
- */
 package com.raine.demo.controller;
 
 import com.raine.demo.domain.User;
 import com.raine.demo.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.util.ResourceUtils;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,10 +25,9 @@ import java.util.regex.Pattern;
  * 测试
  * @author chenjun
  * @date 2019/3/26
- * @since V1.53
+ * @since V1.0
  */
-@RestController
-@EnableAutoConfiguration
+@Controller
 @RequestMapping("/test/boot")
 public class TestBootController {
 
@@ -43,6 +41,20 @@ public class TestBootController {
     public User getUser() {
         User user = userService.getUserById(1L);
         return user;
+    }
+
+    @GetMapping("index")
+    public String index(Model model){
+        System.out.println("controller : TestBootController index doing...");
+        User user = userService.getUserById(2L);
+        model.addAttribute("user", user);
+        return "index";
+    }
+
+    @GetMapping("exception")
+    public String exception(Model model) throws Exception {
+        System.out.println("controller : TestBootController exception doing...");
+        throw new Exception("error");
     }
 
     @RequestMapping("voice")
